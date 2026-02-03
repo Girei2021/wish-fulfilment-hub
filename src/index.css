@@ -2,95 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* MMM Worldwide - Corporate Design System
+   Colors: Deep Navy + Gold/Amber + Emerald accents
+   Typography: Clean, professional, modern
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary - Deep Navy Blue (Trustworthy, Corporate) */
+    --primary: 220 56% 18%;
+    --primary-foreground: 45 100% 96%;
+    
+    /* Secondary - Gold/Amber (Prosperity, Energy) */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 220 56% 12%;
+    
+    /* Accent - Emerald Green (Growth, Technology) */
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surfaces */
+    --background: 210 20% 98%;
+    --foreground: 220 56% 12%;
+    
+    /* Cards & Elevated Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 56% 12%;
+    
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 220 56% 12%;
+    
+    /* Muted surfaces */
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 38 92% 50%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Custom tokens for MMM brand */
+    --navy: 220 56% 18%;
+    --navy-light: 220 45% 28%;
+    --navy-dark: 220 60% 12%;
+    --gold: 38 92% 50%;
+    --gold-light: 42 100% 65%;
+    --gold-dark: 35 90% 40%;
+    --emerald: 160 84% 39%;
+    --emerald-light: 158 64% 52%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 56% 12%) 0%, hsl(220 56% 22%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(42 100% 65%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(220, 56%, 12%, 0.9) 0%, hsla(220, 56%, 18%, 0.7) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsla(220, 56%, 12%, 0.08);
+    --shadow-md: 0 8px 24px -8px hsla(220, 56%, 12%, 0.12);
+    --shadow-lg: 0 20px 48px -12px hsla(220, 56%, 12%, 0.18);
+    --shadow-gold: 0 8px 32px -8px hsla(38, 92%, 50%, 0.35);
+    
+    /* Sidebar */
+    --sidebar-background: 220 56% 18%;
+    --sidebar-foreground: 45 100% 96%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 220 56% 12%;
+    --sidebar-accent: 220 45% 28%;
+    --sidebar-accent-foreground: 45 100% 96%;
+    --sidebar-border: 220 45% 28%;
+    --sidebar-ring: 38 92% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 56% 8%;
+    --foreground: 210 20% 98%;
+    
+    --card: 220 56% 12%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 220 56% 12%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 38 92% 50%;
+    --primary-foreground: 220 56% 12%;
+    
+    --secondary: 220 45% 28%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 220 45% 18%;
+    --muted-foreground: 210 15% 65%;
+    
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 45% 22%;
+    --input: 220 45% 22%;
+    --ring: 38 92% 50%;
   }
 }
 
@@ -99,7 +119,181 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Gold accent underline */
+  .gold-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Service card styling */
+  .service-card {
+    @apply bg-card rounded-2xl p-8 border border-border/50 transition-all duration-300;
+  }
+
+  .service-card:hover {
+    @apply border-secondary/30;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-4px);
+  }
+
+  /* Stats counter */
+  .stat-number {
+    @apply text-5xl md:text-6xl font-bold;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Navigation link styling */
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsla(38, 92%, 50%, 0.45);
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  /* Section styling */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Text gradient */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Icon container */
+  .icon-container {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center bg-secondary/10 text-secondary;
+  }
+
+  .icon-container-lg {
+    @apply w-20 h-20 rounded-2xl flex items-center justify-center bg-secondary/10 text-secondary;
+  }
+
+  /* Form styling */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-border bg-background focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger animation delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  /* Scroll reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
