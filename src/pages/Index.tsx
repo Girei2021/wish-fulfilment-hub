@@ -11,13 +11,16 @@ import {
   TrendingUp,
   Shield,
   Zap,
-  MapPin
+  MapPin,
+  MessageCircle
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading, AnimatedCounter, FadeIn, AnimatedCard } from "@/components/ui/animations";
 import { ServiceCard } from "@/components/ui/service-card";
 import heroImage from "@/assets/hero-logistics.jpg";
+import bgMission from "@/assets/bg-mission.jpg";
+import bgCta from "@/assets/bg-cta.jpg";
 
 const services = [
   {
@@ -72,9 +75,28 @@ const whyChooseUs = [
   },
 ];
 
+const WHATSAPP_NUMBER = "2348000000000"; // Replace with actual WhatsApp number
+const WHATSAPP_MESSAGE = "Hello! I'm interested in MMM Worldwide services.";
+
 export default function Index() {
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
   return (
     <Layout>
+      {/* Floating WhatsApp Button */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5C] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+        aria-label="Contact us on WhatsApp"
+      >
+        <MessageCircle size={32} className="text-white" />
+        <span className="absolute right-full mr-3 px-3 py-2 bg-foreground text-background text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          Chat with us
+        </span>
+      </a>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -136,6 +158,17 @@ export default function Index() {
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/contact">Partner With Us</Link>
+              </Button>
+              <Button 
+                variant="heroOutline" 
+                size="xl" 
+                asChild
+                className="bg-[#25D366] border-[#25D366] hover:bg-[#20BA5C] hover:border-[#20BA5C]"
+              >
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={18} />
+                  WhatsApp Us
+                </a>
               </Button>
             </motion.div>
           </div>
@@ -312,24 +345,32 @@ export default function Index() {
 
             <FadeIn direction="right">
               <div className="relative">
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-primary p-8 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-heading text-3xl font-bold text-white mb-4">
-                      Our Mission
-                    </h3>
-                    <p className="text-white/80 text-lg leading-relaxed">
-                      To provide reliable, efficient, and technology-driven solutions that 
-                      empower businesses and satisfy customers across Nigeria and beyond.
-                    </p>
-                  </div>
-                  <div className="pt-8 border-t border-white/20 mt-8">
-                    <h4 className="font-heading text-xl font-semibold text-white mb-2">
-                      Our Vision
-                    </h4>
-                    <p className="text-white/70">
-                      To be the leading e-commerce and fulfilment company in Nigeria, 
-                      setting the standard for excellence in commerce and logistics.
-                    </p>
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
+                  <img
+                    src={bgMission}
+                    alt="Mission and Vision"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-primary/80" />
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-heading text-3xl font-bold text-white mb-4">
+                        Our Mission
+                      </h3>
+                      <p className="text-white/80 text-lg leading-relaxed">
+                        To provide reliable, efficient, and technology-driven solutions that 
+                        empower businesses and satisfy customers across Nigeria and beyond.
+                      </p>
+                    </div>
+                    <div className="pt-8 border-t border-white/20 mt-8">
+                      <h4 className="font-heading text-xl font-semibold text-white mb-2">
+                        Our Vision
+                      </h4>
+                      <p className="text-white/70">
+                        To be the leading e-commerce and fulfilment company in Nigeria, 
+                        setting the standard for excellence in commerce and logistics.
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-3xl bg-secondary/20 -z-10" />
@@ -340,8 +381,16 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding hero-gradient">
-        <div className="container-custom text-center">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={bgCta}
+            alt="Business partnership"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/85" />
+        </div>
+        <div className="container-custom text-center relative z-10">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               Ready to Transform Your Business?
