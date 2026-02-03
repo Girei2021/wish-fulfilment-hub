@@ -7,12 +7,14 @@ import {
   Clock,
   Send,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  MessageCircle
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading, FadeIn, AnimatedCard } from "@/components/ui/animations";
 import { z } from "zod";
+import heroContact from "@/assets/hero-contact.jpg";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -47,6 +49,9 @@ const contactInfo = [
   },
 ];
 
+const WHATSAPP_NUMBER = "2348000000000";
+const WHATSAPP_MESSAGE = "Hello! I'm interested in MMM Worldwide services.";
+
 export default function Contact() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -58,6 +63,8 @@ export default function Contact() {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -101,9 +108,14 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-1/2 w-96 h-96 rounded-full bg-secondary blur-3xl" />
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroContact}
+            alt="Contact Us"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 hero-overlay" />
         </div>
         
         <div className="container-custom relative z-10">
@@ -113,7 +125,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6 backdrop-blur-sm">
               Contact Us
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
@@ -361,6 +373,17 @@ export default function Contact() {
                         <Mail size={18} />
                       </div>
                       <span>support@mmmworldwide.com</span>
+                    </a>
+                    <a 
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-white hover:text-secondary transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-[#25D366] flex items-center justify-center">
+                        <MessageCircle size={18} />
+                      </div>
+                      <span>Chat on WhatsApp</span>
                     </a>
                   </div>
                 </div>

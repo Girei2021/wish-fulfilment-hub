@@ -14,6 +14,8 @@ import {
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading, FadeIn, AnimatedCard } from "@/components/ui/animations";
+import heroAbout from "@/assets/hero-about.jpg";
+import bgCta from "@/assets/bg-cta.jpg";
 
 const values = [
   {
@@ -65,10 +67,14 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 rounded-full bg-secondary blur-3xl" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-secondary/50 blur-3xl" />
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroAbout}
+            alt="About MMM Worldwide"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 hero-overlay" />
         </div>
         
         <div className="container-custom relative z-10">
@@ -78,7 +84,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6 backdrop-blur-sm">
               About Us
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
@@ -303,8 +309,16 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding hero-gradient">
-        <div className="container-custom text-center">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={bgCta}
+            alt="Business partnership"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/85" />
+        </div>
+        <div className="container-custom text-center relative z-10">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               Ready to Work With Us?
