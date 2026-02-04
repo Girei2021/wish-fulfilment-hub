@@ -9,6 +9,7 @@ import {
   Instagram,
   ArrowRight
 } from "lucide-react";
+import logoMmm from "@/assets/logo_mmm.png";
 
 const footerLinks = {
   company: [
@@ -46,17 +47,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center font-heading font-bold text-secondary-foreground text-lg">
-                M
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-lg leading-tight text-white">
-                  MMM Worldwide
-                </span>
-                <span className="text-xs leading-tight text-white/70">
-                  Wish-Fulfilment Limited
-                </span>
-              </div>
+              <img 
+                src={logoMmm} 
+                alt="MMM Worldwide Logo" 
+                className="h-14 w-auto"
+              />
             </Link>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">
               Connecting commerce and logistics through technology. Your trusted partner for e-commerce and fulfilment solutions in Nigeria and beyond.
@@ -123,8 +118,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-secondary flex-shrink-0" />
-                <a href="tel:+234800000000" className="text-primary-foreground/70 hover:text-secondary transition-colors">
-                  +234 800 000 0000
+                <a href="tel:+2348038592620" className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                  +234 803 859 2620
                 </a>
               </li>
               <li className="flex items-center gap-3">

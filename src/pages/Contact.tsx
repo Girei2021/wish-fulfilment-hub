@@ -35,7 +35,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone Number",
-    details: ["+234 800 000 0000", "+234 900 000 0000"],
+    details: ["+234 803 859 2620"],
   },
   {
     icon: Mail,
@@ -49,7 +49,7 @@ const contactInfo = [
   },
 ];
 
-const WHATSAPP_NUMBER = "2348000000000";
+const WHATSAPP_NUMBER = "2348038592620";
 const WHATSAPP_MESSAGE = "Hello! I'm interested in MMM Worldwide services.";
 
 export default function Contact() {
@@ -357,13 +357,13 @@ export default function Contact() {
                   </p>
                   <div className="space-y-4">
                     <a 
-                      href="tel:+2348000000000"
+                      href="tel:+2348038592620"
                       className="flex items-center gap-3 text-white hover:text-secondary transition-colors"
                     >
                       <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
                         <Phone size={18} />
                       </div>
-                      <span>+234 800 000 0000</span>
+                      <span>+234 803 859 2620</span>
                     </a>
                     <a 
                       href="mailto:support@mmmworldwide.com"
