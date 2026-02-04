@@ -9,13 +9,15 @@ import {
   Building2,
   Scale,
   Globe2,
-  ArrowRight
+  ArrowRight,
+  Quote
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading, FadeIn, AnimatedCard } from "@/components/ui/animations";
 import heroAbout from "@/assets/hero-about.jpg";
 import bgCta from "@/assets/bg-cta.jpg";
+import ceoImage from "@/assets/ceo_mmm.jpeg";
 
 const values = [
   {
@@ -60,6 +62,21 @@ const milestones = [
     year: "2023",
     title: "International Partnerships",
     description: "Established strategic partnerships with global logistics and e-commerce platforms.",
+  },
+  {
+    year: "2024",
+    title: "Credit Facility Launch",
+    description: "Introduced innovative credit and financing solutions to empower businesses and individuals.",
+  },
+  {
+    year: "2025",
+    title: "Digital Transformation",
+    description: "Rolled out AI-powered systems for faster approvals and enhanced customer experience.",
+  },
+  {
+    year: "2026",
+    title: "Pan-African Expansion",
+    description: "Expanding operations beyond Nigeria to serve customers across the African continent.",
   },
 ];
 
@@ -238,6 +255,64 @@ export default function About() {
                 </ul>
               </div>
             </AnimatedCard>
+          </div>
+        </div>
+      </section>
+
+      {/* CEO Section */}
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <FadeIn direction="left">
+              <div className="relative">
+                <div className="aspect-[3/4] rounded-3xl overflow-hidden">
+                  <img
+                    src={ceoImage}
+                    alt="CEO of MMM Worldwide"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-secondary/20 -z-10" />
+                <div className="absolute -top-6 -left-6 w-24 h-24 rounded-2xl bg-primary/10 -z-10" />
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
+                Leadership
+              </span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+                Meet Our <span className="text-gradient-gold">CEO</span>
+              </h2>
+              
+              <div className="bg-muted rounded-2xl p-6 mb-6">
+                <Quote size={32} className="text-secondary/50 mb-4" />
+                <p className="text-lg text-muted-foreground italic leading-relaxed">
+                  "At MMM Worldwide, we believe that everyone deserves access to financial 
+                  freedom. Our mission is to bridge the gap between aspirations and 
+                  achievements through innovative credit solutions and exceptional service."
+                </p>
+              </div>
+
+              <p className="text-muted-foreground mb-6">
+                Under visionary leadership, MMM Worldwide has grown from a startup to a 
+                trusted name in e-commerce, logistics, and financial services across Nigeria. 
+                Our commitment to excellence, transparency, and customer satisfaction drives 
+                everything we do.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                {["Visionary Leadership", "Customer-First Approach", "Innovation Driven"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium"
+                  >
+                    <CheckCircle2 size={16} />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

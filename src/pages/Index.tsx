@@ -75,7 +75,7 @@ const whyChooseUs = [
   },
 ];
 
-const WHATSAPP_NUMBER = "2348000000000"; // Replace with actual WhatsApp number
+const WHATSAPP_NUMBER = "2348038592620";
 const WHATSAPP_MESSAGE = "Hello! I'm interested in MMM Worldwide services.";
 
 export default function Index() {
@@ -380,35 +380,94 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Why Choose Us CTA Section */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={bgCta}
-            alt="Business partnership"
+            alt="Financial freedom"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/90" />
         </div>
-        <div className="container-custom text-center relative z-10">
+        <div className="container-custom relative z-10">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Partner with MMM Worldwide and experience the future of e-commerce and 
-              logistics. Let's build something great together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/contact">
-                  Get Started Today
-                  <ArrowRight size={18} />
-                </Link>
-              </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/services">Explore Our Services</Link>
-              </Button>
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-4 backdrop-blur-sm">
+                Why Choose Us
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
+                Everything You Need for Financial Freedom
+              </h2>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto">
+                We combine cutting-edge technology with personalized service to deliver the best credit facility experience in Nigeria.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <CheckCircle2 size={28} className="text-secondary" />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-3">
+                  No Down Payment Required
+                </h3>
+                <p className="text-white/70 mb-4">
+                  Get what you need without any upfront payment. Start your flexible repayment plan immediately after approval.
+                </p>
+                <span className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-medium">
+                  100% financing available
+                </span>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <Zap size={28} className="text-secondary" />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-3">
+                  Lightning Fast Approval
+                </h3>
+                <p className="text-white/70 mb-4">
+                  Get approved in as little as 24 hours. Our AI-powered system and dedicated team ensure quick processing.
+                </p>
+                <span className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-medium">
+                  24hr approval guarantee
+                </span>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <TrendingUp size={28} className="text-secondary" />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-3">
+                  Flexible Tenure Options
+                </h3>
+                <p className="text-white/70 mb-4">
+                  Choose from 1 to 24 months. Customize your payment plan to fit your budget and financial goals.
+                </p>
+                <span className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-medium">
+                  1-24 months flexibility
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-6 text-white/80">
+              <div className="flex items-center gap-2">
+                <Shield size={18} className="text-secondary" />
+                <span>No Hidden Fees</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield size={18} className="text-secondary" />
+                <span>Bank-Level Security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Headphones size={18} className="text-secondary" />
+                <span>Customer Friendly Support</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={18} className="text-secondary" />
+                <span>Trusted by Clients</span>
+              </div>
             </div>
           </FadeIn>
         </div>

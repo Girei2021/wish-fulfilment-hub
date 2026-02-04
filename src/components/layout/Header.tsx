@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoMmm from "@/assets/logo_mmm.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -39,22 +40,12 @@ export function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center font-heading font-bold text-secondary-foreground text-lg transition-transform group-hover:scale-105">
-              M
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-heading font-bold text-lg leading-tight transition-colors ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}>
-                MMM Worldwide
-              </span>
-              <span className={`text-xs leading-tight transition-colors ${
-                isScrolled ? "text-muted-foreground" : "text-white/70"
-              }`}>
-                Wish-Fulfilment Limited
-              </span>
-            </div>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img 
+              src={logoMmm} 
+              alt="MMM Worldwide Logo" 
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -78,7 +69,7 @@ export function Header() {
               asChild
               className="btn-secondary"
             >
-              <Link to="/contact">Partner With Us</Link>
+              <a href="https://www.mmmworld.com.ng/register" target="_blank" rel="noopener noreferrer">Get Started</a>
             </Button>
           </div>
 
@@ -131,7 +122,7 @@ export function Header() {
                 className="pt-4"
               >
                 <Button asChild className="btn-secondary w-full">
-                  <Link to="/contact">Partner With Us</Link>
+                  <a href="https://www.mmmworld.com.ng/register" target="_blank" rel="noopener noreferrer">Get Started</a>
                 </Button>
               </motion.div>
             </div>
